@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/features/product/domain/entities/product.dart'; // وارد کردن ProductEntity
+import 'package:flutter_application_1/features/product/domain/entities/product.dart';
 
 class ProductCard extends StatelessWidget {
   final ProductEntity product;
@@ -16,7 +16,7 @@ class ProductCard extends StatelessWidget {
         trailing: imageUrl.isNotEmpty
             ? Image.network(imageUrl, width: 50, height: 50, fit: BoxFit.cover)
             : const Icon(Icons
-                .image_not_supported), // نمایش آیکون پیش‌فرض در صورت عدم وجود تصویر
+                .image_not_supported), 
       ),
     );
   }

@@ -8,10 +8,12 @@ import 'features/product/domain/usecases/get_products.dart';
 import 'features/product/presentation/bloc/product_bloc.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -23,10 +25,11 @@ class MyApp extends StatelessWidget {
         create: (context) => ProductBloc(
           getProducts: GetProducts(
             repository: ProductRepositoryImpl(
-              remoteDataSource: ProductRemoteDataSource(), // ✅ مقداردهی به remoteDataSource
+              remoteDataSource:
+                  ProductRemoteDataSource(), 
             ),
           ),
-        )..add(FetchProductsEvent()), // ✅ اضافه کردن رویداد
+        )..add(FetchProductsEvent()), 
         child: const ProductListScreen(),
       ),
     );

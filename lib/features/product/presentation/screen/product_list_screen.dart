@@ -27,7 +27,6 @@ class ProductListScreen extends StatelessWidget {
           final product = ProductModel.fakeProducts()[index];
           return GestureDetector(
             onTap: () {
-              // ارسال محصول به صفحه جزئیات
               Navigator.push(
                 context,
                 MaterialPageRoute(

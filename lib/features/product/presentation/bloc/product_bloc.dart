@@ -1,7 +1,7 @@
 import 'package:flutter_application_1/features/product/domain/entities/product.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_application_1/features/product/domain/usecases/get_products.dart';
-import 'package:flutter_application_1/features/product/data/models/product_model.dart'; // ✅ ایمپورت مدل
+import 'package:flutter_application_1/features/product/data/models/product_model.dart'; 
 import 'product_event.dart';
 import 'product_state.dart';
 
@@ -23,7 +23,7 @@ class ProductBloc extends Bloc<ProductEvent, ProductState> {
                 ))
             .toList();
 
-        emit(ProductLoaded(products: products)); // 📌 حالا مقداردهی درست است ✅
+        emit(ProductLoaded(products: products)); // 
       } catch (e) {
         emit(ProductError(e.toString()));
       }

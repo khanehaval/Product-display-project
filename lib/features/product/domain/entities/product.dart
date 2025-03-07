@@ -1,4 +1,3 @@
-// lib/features/product/domain/entities/product.dart
 class ProductEntity {
   final int id;
   final String title;

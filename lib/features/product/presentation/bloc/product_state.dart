@@ -9,7 +9,7 @@ class ProductLoading extends ProductState {}
 class ProductLoaded extends ProductState {
   final List<ProductModel> products;
 
-  ProductLoaded({required this.products}); // ✅ استفاده از Named Parameter
+  ProductLoaded({required this.products}); 
 }
 
 class ProductError extends ProductState {

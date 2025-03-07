@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/model/student.dart';
+import 'package:flutter_application_1/features/product/data/models/student.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 class StudentListScreen extends StatelessWidget {
@@ -34,7 +34,7 @@ class StudentListScreen extends StatelessWidget {
       student.name = newName;
       student.lastName = newLastName;
       student.age = newAge;
-      studentBox.putAt(index, student); // بروزرسانی دانش‌آموز
+      studentBox.putAt(index, student);
     }
   }
 
@@ -42,13 +42,12 @@ class StudentListScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('لیست دانش‌آموزان'),
+        title: const Text('لیست دانش‌آموزان'),
         centerTitle: true,
         backgroundColor: Colors.blue,
       ),
       body: Column(
         children: [
-          // فرم اضافه کردن دانش‌آموز
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: Column(
@@ -76,15 +75,13 @@ class StudentListScreen extends StatelessWidget {
                   onPressed: () =>
                       _addStudent(Hive.box<Student>('studentsBox')),
                   style: ElevatedButton.styleFrom(
-                    minimumSize: const Size(double.infinity, 50),
-                    primary: Colors.green,
+                    minimumSize: const Size(double.infinity, 50), backgroundColor: Colors.green,
                   ),
                   child: const Text('ذخیره', style: TextStyle(fontSize: 18)),
                 ),
               ],
             ),
           ),
-          // لیست دانش‌آموزان
           Expanded(
             child: ValueListenableBuilder<Box<Student>>(
               valueListenable: Hive.box<Student>('studentsBox').listenable(),
@@ -168,10 +165,9 @@ class StudentListScreen extends StatelessWidget {
                                         }
                                       },
                                       style: ElevatedButton.styleFrom(
-                                        minimumSize: Size(double.infinity, 50),
-                                        primary: Colors.blue,
+                                        minimumSize: const Size(double.infinity, 50), backgroundColor: Colors.blue,
                                       ),
-                                      child: Text('ذخیره',
+                                      child: const Text('ذخیره',
                                           style: TextStyle(fontSize: 18)),
                                     ),
                                   ],

@@ -4,7 +4,6 @@ import 'package:flutter_application_1/features/product/data/models/product_model
 class ProductDetailScreen extends StatelessWidget {
   final ProductModel product;
 
-  // سازنده برای دریافت محصول
   const ProductDetailScreen({super.key, required this.product});
 
   @override
@@ -89,7 +88,6 @@ class ProductDetailScreen extends StatelessWidget {
               const SizedBox(height: 10),
               ..._buildFeatureList(),
               const SizedBox(height: 20),
-              // دکمه‌های خرید
               Row(
                 children: [
                   Expanded(
@@ -142,7 +140,6 @@ class ProductDetailScreen extends StatelessWidget {
     );
   }
 
-  // تابعی برای نمایش ویژگی‌های محصول
   List<Widget> _buildFeatureList() {
     return [
       _buildFeatureItem('رنگ: مشکی'),
@@ -152,7 +149,6 @@ class ProductDetailScreen extends StatelessWidget {
     ];
   }
 
-  // نمایش هر ویژگی به همراه آیکن تیک
   Widget _buildFeatureItem(String text) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 5),
