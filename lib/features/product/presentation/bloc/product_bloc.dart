@@ -23,7 +23,7 @@ class ProductBloc extends Bloc<ProductEvent, ProductState> {
                 ))
             .toList();
 
-        emit(ProductLoaded(products: products)); // 
+        emit(ProductLoaded(products: products)); 
       } catch (e) {
         emit(ProductError(e.toString()));
       }

@@ -5,7 +5,7 @@ import 'package:flutter_application_1/features/product/data/models/product_model
 class ProductRepositoryImpl implements ProductRepository {
   final ProductRemoteDataSource remoteDataSource;
 
-  ProductRepositoryImpl({required this.remoteDataSource}); // ✅ پارامتر اجباری
+  ProductRepositoryImpl({required this.remoteDataSource}); 
 
   @override
   Future<List<ProductModel>> getProducts() async {
